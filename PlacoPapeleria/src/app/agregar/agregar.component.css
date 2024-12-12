@@ -1,0 +1,149 @@
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7dcb9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #4d3c2d;
+}
+
+/* Contenedores */
+.containerAgregar {
+    width: 90%;
+    margin: auto;
+    border-radius: 15px;
+    background-color: #deac80;
+    padding: 40px;
+    border: solid black 2px;
+    animation: fadeIn 0.8s ease-in-out;
+    box-shadow: 1px 3px 4px black;
+}
+
+/* Separadores */
+hr {
+    border: dashed 2px black;
+    margin: 40px;
+    color: #AF8260;
+}
+
+/* Títulos */
+.tituloGaleria {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+h2, h3 {
+    text-align: center;
+    color: #4d3c2d; /* Color de fuente */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Media queries para el diseño responsivo */
+@media (max-width: 1200px) {
+    .columna {
+        flex: 1 0 calc((100% - 60px) / 4); /* 4 columnas en pantallas grandes */
+    }
+}
+
+@media (max-width: 992px) {
+    .columna {
+        flex: 1 0 calc((100% - 40px) / 3); /* 3 columnas en pantallas medianas */
+    }
+}
+
+@media (max-width: 768px) {
+    .columna {
+        flex: 1 0 calc((100% - 20px) / 2); /* 2 columnas en pantallas pequeñas */
+    }
+}
+
+@media (max-width: 576px) {
+    .columna {
+        flex: 1 0 calc(100% - 20px); /* 1 columna en pantallas extra pequeñas */
+    }
+}
+
+/* Estilos de los formularios */
+.form-group {
+    margin-bottom: 30px; /* Separar más los grupos */
+    text-align: center; /* Centrar el contenido */
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-align: center; /* Centrar el texto */
+}
+
+select, input {
+    display: block; /* Asegura que ocupen su propia línea */
+    margin: 0 auto 20px; /* Centrados y con separación inferior */
+    width: 30%; /* Ancho del 30% */
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+input:focus, select:focus {
+    border-color: #deac80;
+    outline: none;
+}
+
+/* Estilos del botón */
+button {
+    background-color: #4d3c2d;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 20px;
+    display: block;
+    width: 20%;
+    margin: 0 auto;
+}
+
+button:hover {
+    background-color: #f7dcb9;
+    color: black;
+}
+
+/* Estilos de las alertas */
+.alert-success {
+    background-color: green;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.alert-danger {
+    background-color: red;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

@@ -1,0 +1,40 @@
+<div class="containerDesc">
+    <h2>Descripción de la Tabla</h2>
+  
+    <!-- Select para elegir la tabla -->
+    <div>
+      <label for="tablaSelector" class="form-label">Selecciona una tabla:</label>
+      <select
+        id="tablaSelector"
+        class="form-select"
+        [(ngModel)]="tablaSeleccionada"
+        (change)="cargarEstructuraTabla()"
+      >
+        <option *ngFor="let tabla of tablas" [value]="tabla">{{ tabla }}</option>
+      </select>
+    </div>
+  
+    <!-- Mostrar la estructura de la tabla seleccionada -->
+    <div *ngIf="estructuraTabla.length > 0" class="mt-4">
+      <h3>Estructura de la tabla: {{ tablaSeleccionada }}</h3>
+  
+      <table class="table table-striped mt-3">
+        <thead>
+          <tr>
+            <th>Campo</th>
+            <th>Tipo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let columna of estructuraTabla">
+            <td>{{ columna.Field }}</td>
+            <td>{{ columna.Type }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  
+    <div *ngIf="estructuraTabla.length === 0" class="mt-4">
+      <p>Selecciona una tabla para ver su estructura.</p>
+    </div>
+  </div>

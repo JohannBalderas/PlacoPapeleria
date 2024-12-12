@@ -1,0 +1,30 @@
+.navbar {
+    background-color: #DEAC80;
+    border-bottom: dashed black 2px;
+    margin-bottom: 40px;
+}
+
+li{
+    margin-right: 20px;
+}
+
+.nav-item:hover {
+    transform: scale(1.2);
+    border-bottom: solid black 2px; 
+}
+
+i{
+    margin-right: 5px;
+}
+
+nav{
+    box-shadow: 0px 12px 5px rgba(0, 0, 0, 0.1);
+}
+
+img{
+    height: 4rem;
+}
+
+.nav-link{
+    font-weight: bold;
+}

@@ -1,0 +1,131 @@
+/* Estilos generales */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Contenedor principal */
+.containerAdopta {
+  width: 80%;
+  margin: auto;
+  padding: 40px;
+  background-color: #deac80; /* Color de fondo de las demás páginas */
+  color: #4d3c2d; /* Color de fuente */
+  border-radius: 15px;
+  border: 2px solid #000000;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.8s ease-in-out;
+  box-shadow: 1px 3px 4px black;
+}
+
+/* Títulos */
+h2, h3 {
+  text-align: center;
+  color: #4d3c2d; /* Color de fuente */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Línea de separación */
+hr {
+  border: 2px dashed #000000;
+  margin: 20px 0;
+}
+
+/* Estilos de los campos del formulario */
+label {
+  color: black;
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+  display: block;
+}
+
+select, input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 16px;
+  border-radius: 5px;
+  border: white;
+  background-color: #F1F1F1;
+  color: #333;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+select:focus, input:focus {
+  border-color: #4A90E2;
+  box-shadow: 0 0 10px rgba(74, 144, 226, 0.2);
+}
+
+button {
+  width: 100%;
+  padding: 14px;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border: none;
+  background-color: #4d3c2d; /* Color de fondo de las demás páginas */
+  color: white;
+}
+
+/* Estilos para el botón "Ejecutar" */
+
+/* Estilo para los botones en general */
+button:hover {
+  background-color: #f7dcb9;
+  color: black;
+}
+
+/* Mensajes de éxito o error */
+.alert {
+  padding: 15px;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.alert-success {
+  background-color: #4d3c2d; /* Color de fuente */
+  color: white;
+}
+
+.alert-danger {
+  background-color: #F44336;
+  color: white;
+}
+
+/* Tabla de resultados */
+table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #ffffff; /* Color de fondo del header */
+  color: #4d3c2d; /* Color de fuente */
+}
+
+td {
+  background-color: #ffffff; /* Color de fondo de las demás páginas */
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+      transform: translateY(-20px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}

@@ -1,0 +1,38 @@
+<div class="containerGaleria">
+  <h2 class="tituloGaleria">Agregar registro</h2>
+  <hr>
+
+  <div>
+    <label for="tablaSelector" class="form-label">Selecciona una tabla:</label>
+    <select
+      id="tablaSelector"
+      class="form-select"
+      [(ngModel)]="tablaSeleccionada"
+      (change)="cargarEstructuraTabla()"
+    >
+      <option *ngFor="let tabla of tablas" [value]="tabla">{{ tabla }}</option>
+    </select>
+  </div>
+
+  <div *ngIf="tablaSeleccionada" class="mt-4">
+    <h3>Agregar un nuevo registro a la tabla: {{ tablaSeleccionada }}</h3>
+
+    <form (ngSubmit)="darDeAlta()">
+      <div *ngFor="let columna of estructuraTabla; let i = index" class="mb-3">
+        <label [for]="columna" class="form-label">{{ columna }}</label>
+        <input
+          type="text"
+          [id]="columna"
+          class="form-control"
+          [(ngModel)]="nuevoRegistro[columna]"
+          [name]="columna"
+          [disabled]="i === 0">
+      </div>
+      <button type="submit" class="btn btn-primary">Guardar</button>
+    </form>
+  </div>
+
+  <div *ngIf="mensaje" class="alert" [class.alert-success]="success" [class.alert-danger]="!success">
+    {{ mensaje }}
+  </div>
+</div>

@@ -1,0 +1,50 @@
+.containerAdopta{
+    width: 90%;
+    margin: auto;
+    border-radius: 15px;
+    background-color: #deac80;
+    padding: 40px;
+    border: solid black 2px;
+    box-shadow: 1px 3px 4px black;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+.card{
+    background-color: #b99d81;
+    padding: 20px;
+    border-radius: 20px;
+    border: dashed black 3px ;
+}
+
+
+hr{
+    border: dashed 2px black;
+    margin: 40px;
+    color: #AF8260;
+
+}
+
+.form-label{
+    color: black;
+    font-size: 1.3rem;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+h2, h3 {
+    text-align: center;
+    color: #4d3c2d; /* Color de fuente */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  /* Animación de entrada */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+  }

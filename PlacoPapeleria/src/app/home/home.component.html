@@ -1,0 +1,51 @@
+<div class="containerAdopta">
+  <section>
+    <h2>Consultas Personalizadas</h2>
+  
+    <!-- Selector de Query -->
+    <label for="query">Seleccione un reporte:</label>
+    <select id="query" [(ngModel)]="querySeleccionado">
+      <option value="1">Ventas totales por cliente considerando devoluciones</option>
+      <option value="2">Devoluciones más frecuentes por producto</option>
+      <option value="3">Total de compras y devoluciones por cliente</option>
+      <option value="4">Detalle de órdenes de compra y sus productos en inventario</option>
+      <option value="5">Ranking de productos con más ventas netas</option>
+      <option value="6">Promedio de cantidad de productos por cliente en sus compras</option>
+      <option value="7">Órdenes de compra con mayor costo total</option>
+      <option value="8">Devoluciones por razón y su impacto en ventas</option>
+      <option value="9">Clientes que compraron más productos únicos</option>
+      <option value="10">Productos más ordenados en órdenes de compra</option>
+      <option value="11">Clientes con más devoluciones de productos únicos</option>
+      <option value="12">Ingresos y gastos netos por sucursal</option>
+      <option value="13">Total de inventario por sucursal</option>
+      <option value="14">Promedio de ventas por empleado</option>
+      <option value="15">Productos más vendidos por sucursal</option>
+      <option value="16">Impacto de gastos en cada sucursal</option>
+      <option value="17">Productos más vendidos y su contribución a las ganancias</option>
+      <option value="18">Promedio de gasto por cliente en sus compras</option>
+      <option value="19">Ventas totales por sucursal y empleados involucrados</option>
+      <option value="20">Órdenes de compra con mayor número de productos diferentes</option>
+      <option value="21">Sucursales con mayores ingresos por ventas y su inventario actual</option>
+    </select>
+    <button (click)="ejecutarQuery()">Ejecutar</button>
+  
+    <!-- Resultados de la Consulta -->
+    <div *ngIf="consultas && consultas.length">
+      <h3>Resultados:</h3>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th *ngFor="let key of consultas[0] | keyvalue">{{ key.key }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let row of consultas">
+            <td *ngFor="let key of row | keyvalue">{{ key.value }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  
+  
+</div>

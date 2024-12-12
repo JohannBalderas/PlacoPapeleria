@@ -1,0 +1,38 @@
+<div class="containerDev">
+    <h2>Registrar Devolución</h2>
+
+    <form (ngSubmit)="registrarDevolucion()" class="form-group">
+      <label for="venta">Venta:</label>
+      <select [(ngModel)]="id_venta" name="venta" required>
+        <option *ngFor="let venta of ventas" [value]="venta.id_venta">
+          Venta #{{ venta.id_venta }}
+        </option>
+      </select>
+  
+      <label for="producto">Producto:</label>
+      <select [(ngModel)]="id_producto" name="producto" required>
+        <option *ngFor="let producto of productos" [value]="producto.id_producto">
+          {{ producto.id_producto }} - {{ producto.nombre }}
+        </option>
+      </select>
+  
+      <label for="cantidad">Cantidad:</label>
+      <input type="number" [(ngModel)]="cantidad" name="cantidad" required />
+  
+      <div class="form-group">
+        <label for="razon" class="form-label">Razón de devolución:</label>
+        <select id="razon" [(ngModel)]="razon" name="razon" required>
+          <option value="" disabled selected>Selecciona una razón</option>
+          <option *ngFor="let razon of razones" [value]="razon.id_razon">
+            {{ razon.descripcion }}
+          </option>
+        </select>
+      </div>
+      
+      <button type="submit">Registrar</button>
+    </form>
+  
+    <div *ngIf="mensaje" class="alert" [class.alert-success]="success" [class.alert-danger]="!success">
+        {{ mensaje }}
+    </div>
+</div>

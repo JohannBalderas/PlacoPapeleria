@@ -1,0 +1,27 @@
+<div class="containerReporte">
+  <h2>Eliminar Registro</h2>
+  <hr />
+
+  <label class="subtitulo" for="tablaSeleccionada">Selecciona una tabla:</label>
+  <select id="tablaSeleccionada" [(ngModel)]="tablaSeleccionada">
+    <option *ngFor="let tabla of tablas" [value]="tabla">{{ tabla }}</option>
+  </select>
+
+  <br /><br />
+
+  <label class="subtitulo" for="idRegistro">ID del Registro a Eliminar:</label>
+  <input
+    id="idRegistro"
+    type="text"
+    [(ngModel)]="idRegistro"
+    placeholder="Ingrese el ID"
+  />
+
+  <br /><br />
+
+  <button class="btn btn-danger" (click)="eliminarRegistro()">Eliminar</button>
+
+  <div *ngIf="mensaje" class="alert" [class.alert-success]="success" [class.alert-danger]="!success">
+    {{ mensaje }}
+  </div>
+</div>

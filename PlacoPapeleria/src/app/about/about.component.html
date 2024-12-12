@@ -1,0 +1,43 @@
+<div class="containerAdopta">
+  <h2>Actualizar Registro</h2>
+  <hr />
+
+  <!-- Selección de tabla -->
+  <label for="tablaSeleccionada">Selecciona la tabla:</label>
+  <select id="tablaSeleccionada" [(ngModel)]="tablaSeleccionada" (change)="cargarEstructuraTabla()">
+    <option *ngFor="let tabla of tablas" [value]="tabla">{{ tabla }}</option>
+  </select>
+
+  <br /><br />
+
+  <!-- Ingreso de ID -->
+  <label for="idRegistro">Buscar registro por ID:</label>
+  <input
+    id="idRegistro"
+    type="text"
+    [(ngModel)]="idRegistro"
+    placeholder="Ingrese el ID"
+  />
+  <button class="btn btn-primary" (click)="cargarRegistro()">Cargar</button>
+
+  <!-- Edición de registro -->
+  <div *ngIf="registroSeleccionado">
+    <h3>Editar Registro</h3>
+    <form #form="ngForm" (ngSubmit)="guardarCambios()">
+      <div *ngFor="let campo of campos">
+        <label>{{ campo.Field }}:</label>
+        <input
+          [(ngModel)]="registroSeleccionado[campo.Field]"
+          [name]="campo.Field"
+          [readonly]="campo.Key === 'PRI'"
+        />
+      </div>
+      <button class="btn btn-success" type="submit">Guardar Cambios</button>
+    </form>
+  </div>
+
+  <!-- Mensajes de éxito o error -->
+  <div *ngIf="mensaje" class="alert" [class.alert-success]="success" [class.alert-danger]="!success">
+    {{ mensaje }}
+  </div>
+</div>

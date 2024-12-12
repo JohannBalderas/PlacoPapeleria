@@ -1,0 +1,33 @@
+<div class="containerAdopta">
+    <h2 class="tituloAdopta">Tablas de la Base de Datos</h2>
+    <hr>
+    <div>
+      <label for="tablaSelector" class="form-label">Selecciona una tabla:</label>
+      <select
+        id="tablaSelector"
+        class="form-select"
+        [(ngModel)]="tablaSeleccionada"
+        (change)="mostrarDatos()"
+      >
+        <option *ngFor="let tabla of tablas" [value]="tabla">{{ tabla }}</option>
+      </select>
+    </div>
+    <div *ngIf="datosTabla.length; else noData">
+      <h3 class="mt-4">Datos de la tabla: {{ tablaSeleccionada }}</h3>
+      <table class="table table-striped mt-3">
+        <thead>
+          <tr>
+            <th *ngFor="let col of columnas">{{ col }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let fila of datosTabla">
+            <td *ngFor="let col of columnas">{{ fila[col] }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <ng-template #noData>
+      <p class="text-center mt-3">Selecciona una tabla para ver los datos.</p>
+    </ng-template>
+  </div>

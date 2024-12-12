@@ -1,0 +1,73 @@
+<div class="containerGaleria">
+  <h2 class="tituloGaleria">Productos</h2>
+  <div class="galeria">
+    <div *ngFor="let producto of productos" class="columna">
+      <div class="producto">
+        <p>{{ producto.id_producto }}</p>
+        <p>{{ producto.nombre }}</p>
+        <p>Precio: ${{ producto.precio }}</p>
+        <button (click)="agregarProducto(producto)">Agregar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<br><br><br>
+
+<!-- Carrito de compras -->
+<div class="containerTabla">
+  <h2>Carrito </h2>
+  <div *ngFor="let producto of carrito">
+    <p>{{ producto.nombre }} ({{ producto.cantidad }}) - ${{ producto.precio * producto.cantidad }}</p>
+  </div>
+  <h3>Total: ${{ total }}</h3>
+</div>
+<br><br><br>
+
+<!-- Formulario para cliente, empleado y forma de pago -->
+<div class="form-group">
+  <label for="cliente" class="form-label">ID Cliente:</label>
+  <input 
+    id="cliente" 
+    type="number" 
+    [(ngModel)]="id_cliente" 
+    placeholder="Ingresa el ID del cliente" 
+    required 
+  />
+</div>
+
+<div class="form-group">
+  <label for="empleado" class="form-label">ID Empleado:</label>
+  <select id="empleado" [(ngModel)]="id_empleado">
+    <option value="0" disabled>Selecciona un empleado</option>
+    <option *ngFor="let empleado of empleados" [value]="empleado.id_empleado">
+      {{empleado.id_empleado}} - {{ empleado.nombre }} 
+    </option>
+  </select>
+</div>
+
+<div class="form-group">
+  <label for="sucursal">Sucursal:</label>
+  <select id="sucursal" [(ngModel)]="id_sucursal">
+    <option value="0" disabled>Selecciona una sucursal</option>
+    <option *ngFor="let sucursal of sucursales" [value]="sucursal.id_sucursal">
+      {{sucursal.id_sucursal}} - {{ sucursal.nombre }}
+    </option>
+  </select>
+</div>
+
+<div class="form-group">
+  <label for="formapago" class="form-label">Forma de Pago:</label>
+  <select id="formapago" [(ngModel)]="id_formapago">
+    <option value="0" disabled>Selecciona un método de pago</option>
+    <option *ngFor="let forma of formasPago" [value]="forma.id_formapago">
+      {{ forma.tipo }} - {{ forma.descripcion }}
+    </option>
+  </select>
+</div>
+
+<button class="finalizar" (click)="finalizarVenta()">Finalizar Venta</button>
+
+<div *ngIf="mensaje" class="alert" [class.alert-success]="success" [class.alert-danger]="!success">
+  {{ mensaje }}
+</div>
+<br><br>

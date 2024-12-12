@@ -1,0 +1,116 @@
+.containerGaleria {
+    width: 90%;
+    margin: auto;
+    border-radius: 15px;
+    background-color: #deac80;
+    padding: 40px;
+    border: solid black 2px;
+    animation: fadeIn 0.8s ease-in-out;
+    box-shadow: 1px 3px 4px black;
+  }
+
+
+  .containerTabla {
+    width: 90%;
+    margin: auto;
+    border-radius: 15px;
+    background-color: #AF8260;
+    padding: 40px;
+    border: black 2px dashed;
+    box-shadow: 1px 3px 4px black;
+  }
+
+  hr{
+    border: dashed 2px black;
+    margin: 40px;
+    color: #AF8260;
+  }
+  
+  .tituloGaleria {
+    margin-bottom: 2rem;
+    text-align:center;
+    
+  }
+  
+  .galeria {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .columna {
+    flex: 1 0 calc((100% - 80px) / 5); /* 5 columnas por defecto, teniendo en cuenta el espacio entre columnas */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  @media (max-width: 1200px) {
+    .columna {
+      flex: 1 0 calc((100% - 60px) / 4); /* 4 columnas en pantallas grandes */
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .columna {
+      flex: 1 0 calc((100% - 40px) / 3); /* 3 columnas en pantallas medianas */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .columna {
+      flex: 1 0 calc((100% - 20px) / 2); /* 2 columnas en pantallas pequeñas */
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .columna {
+      flex: 1 0 calc(100% - 20px); /* 1 columna en pantallas extra pequeñas */
+    }
+  }
+  
+
+  .form-label{
+    color: black;
+    font-size: 1.3rem;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  h2, h3 {
+    text-align: center;
+    color: #4d3c2d; /* Color de fuente */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+    .alert-success {
+      background-color: green;
+      color: white;
+      padding: 15px;
+      border-radius: 5px;
+      font-size: 1.1rem;
+      margin-top: 20px;
+      text-align: center;
+    }
+    
+    .alert-danger {
+      background-color: red;
+      color: white;
+      padding: 15px;
+      border-radius: 5px;
+      font-size: 1.1rem;
+      margin-top: 20px;
+      text-align: center;
+    }
+  
+  /* Animación de entrada */
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+      transform: translateY(-20px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}

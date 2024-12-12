@@ -1,0 +1,37 @@
+<div class="containerAgregar">
+    <h2>Agregar Columna a una Tabla</h2>
+  
+    <div>
+      <label for="tabla">Selecciona una tabla:</label>
+      <select id="tabla" [(ngModel)]="tablaSeleccionada" class="form-select">
+        <option *ngFor="let tabla of tablas" [value]="tabla">{{ tabla }}</option>
+      </select>
+    </div>
+  
+    <div>
+      <label for="nombreColumna">Nombre de la columna:</label>
+      <input
+        type="text"
+        id="nombreColumna"
+        [(ngModel)]="nombreColumna"
+        class="form-control"
+      />
+    </div>
+  
+    <div>
+      <label for="tipoColumna">Tipo de dato:</label>
+      <input
+        type="text"
+        id="tipoColumna"
+        [(ngModel)]="tipoColumna"
+        class="form-control"
+        placeholder="Ejemplo: VARCHAR(255), INT, etc."
+      />
+    </div>
+  
+    <button class="button" (click)="agregarColumna()">Agregar Columna</button>
+  
+    <div *ngIf="mensaje" class="alert" [class.alert-success]="success" [class.alert-danger]="!success">
+        {{ mensaje }}
+    </div>
+</div>

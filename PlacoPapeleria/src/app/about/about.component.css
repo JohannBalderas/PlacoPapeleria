@@ -1,0 +1,161 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Contenedor principal */
+  .containerAdopta {
+    width: 80%;
+    margin: auto;
+    padding: 40px;
+    background-color: #deac80;
+    color: #4d3c2d;
+    border-radius: 15px;
+    border: 2px solid #000000;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.8s ease-in-out;
+    box-shadow: 1px 3px 4px black;
+  }
+  
+  /* Títulos */
+  h1, h3 {
+    text-align: center;
+    color: #4d3c2d;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  /* Línea de separación */
+  hr {
+    border: 2px dashed #000000;
+    margin: 20px 0;
+  }
+  
+  /* Estilos de los campos del formulario */
+  label {
+    color: black;
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+    display: block;
+  }
+  
+  input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 16px;
+    border-radius: 5px;
+    border: white;
+    background-color: #F1F1F1;
+    color: #333;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+  }
+  
+  input:focus {
+    border-color: #4A90E2;
+    box-shadow: 0 0 10px rgba(74, 144, 226, 0.2);
+  }
+  
+  button {
+    width: 100%;
+    padding: 14px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border: none;
+  }
+  
+  /* Estilos para el botón "Cargar" */
+  button.btn-primary {
+    background-color: #4d3c2d;
+    color: white;
+  }
+  
+  button:hover {
+    background-color: #f7dcb9; /* Color de fondo de las demás páginas */
+    color: black;
+  }
+  
+  /* Estilo para el botón "Guardar Cambios" */
+  button.btn-success {
+    background-color: #6DBE45;
+    color: white;
+  }
+  
+  /* Mensajes de éxito o error */
+  .alert-success {
+    background-color: green;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .alert-danger {
+    background-color: #F44336;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  /* Estilos adicionales */
+  .card {
+    background-color: #3C4F76;
+    color: white;
+    padding: 25px;
+    border-radius: 10px;
+    margin-top: 20px;
+    border: 3px dashed #4A90E2;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 15px;
+  }
+  
+  .card h3 {
+    color: black;
+    font-size: 1.3rem;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  
+  /* Animación de entrada */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  select, input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 16px;
+    border-radius: 5px;
+    border: white;
+    background-color: #F1F1F1;
+    color: #333;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+  }
+
+  h2, h3 {
+    text-align: center;
+    color: #4d3c2d; /* Color de fuente */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
